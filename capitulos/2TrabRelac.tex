@@ -1,0 +1,68 @@
+
+\noindent Neste capítulo serão abordados os trabalhos que detêm assunto de pesquisa semelhante ao proposto por este trabalho. A partir disto, foram realizadas diversas buscas nas bases de dados de pesquisas \textit{on-line}, como, por exemplo, o \textit{IEEE Xplore}, o \textit{ACM Digital Library}, bem como o  \textit{SciELO}. Essas buscas tiveram como objetivo buscar artigos científicos, dissertações de mestrado e teses de doutorado que abordassem o tema de geração de narrativas com o uso de Inteligência Artificial com as seguintes \textit{strings} de busca: \textit{``AI generated storytelling''}, \textit{``generating narratives with AI''}, \textit{``game narrative AI''} e \textit{``petri net game story''}. Um dos principais critérios de seleção foi a proximidade com o tema tratado neste trabalho, uma vez que, caso muito ampla, a pesquisa retornaria artigos que o deixariam tangenciado. Foi dada preferência para trabalhos que estivessem escritos nos idiomas Inglês e Português. Por fim, a seguir, estão os trabalhos encontrados que mais se relacionam com essa pesquisa.
+
+\section{\textit{Unveiling New Realms: Enhancing Procedural Narrative Generation and NPC Personalization using AI}}
+\noindent Com o avanço da Inteligência Artificial (IA), a geração de narrativas procedurais em jogos tem ganhado destaque, mas ainda enfrenta desafios como falta de profundidade emocional, repetitividade e incoerência narrativa \cite{chawla24}. \citeonline{chawla24} propõe um framework de design de sistema que utiliza modelos GPT \textit{(Generative Pre-trained Transformers)} que visa aprimorar a geração de narrativas e a personalização de personagens não jogáveis \textit{(NPCs)} em jogos, visando criar experiências de jogo mais ricas e personalizadas para o usuário.
+
+O estudo busca abordar as limitações da geração procedural de narrativas. utilizando IA generativa para criar histórias dinâmicas e coerentes. Para isso, o autor propõe um sistema que combina estruturas narrativas bem definidas com diretrizes que garantem que o conteúdo gerado seja coeso. O sistema é implementado em um jogo de cartas de mistério criminal, onde a narrativa, os diálogos dos NPCs e os elementos do enredo são gerados de modo dinâmico pelo GPT. 
+
+A metodologia usada é a criação de um \textit{framework} de design de sistema que se apropria de técnicas como \textit{chunking} (divisão de informações em partes menores) e geração de dados em formato JSON para garantir que o conteúdo gerado seja relevante e pronto para uso no jogo. O sistema é projetado para manter a consistência das personalidades dos NPCs e evitar a geração de conteúdo inadequado ou fora do contexto. O jogo desenvolvido, chamado "\textit{Dark Shadows}", utiliza \textit{loops} de jogabilidade que permite ao jogador resolver casos, coletar itens e desvendar a narrativa principal. Todos os elementos narrativos são 
+\newpage
+\vspace*{0.01cm}gerados em tempo real pelo GPT.
+
+\citeonline{chawla24} conclui que o uso de modelos GPT juntamente com um \textit{framework} bem estruturado é capaz de trazer significativa melhora para a geração de narrativas procedurais e para a personalização de NPCs em jogos. É enfatizada a importância de certo pragmatismo ao se deparar com as limitações dos modelos de linguagem, sendo necessário o constante ajuste nos \textit{prompts}, garantindo a conformidade dos eventos narrados. Por fim, \citeonline{chawla24} abre caminho para futuras pesquisas em narrativas interativas e design de jogos, sugerindo que modelos GPT personalizados podem ser uma ferramenta poderosa para criar experiências de jogo mais imersivas e dinâmicas.
+
+\section{\textit{Plans and planning in narrative generation: a review of plan-based approaches to the generation of story, discourse and interactivity in narratives}}
+\noindent Pesquisas computacionais voltadas para a construção de modelos de narrativa e seu uso têm sido interesse de vários pesquisadores há bastante tempo. Esse interesse tem sido influenciado por diversas disciplinas, entre elas a teoria da narrativa, os estudos de jogos e até mesmo a psicologia cognitiva, bem como estudos de cinema \cite{young2013plans}. O trabalho de \citeonline{young2013plans} foca em três aspectos e os coloca como os principais: história, discurso e interatividade. 
+
+A história inclui eventos, ações e personagens. O discurso se refere ao modo como conta-se a história, desde escolhas de vocabulário até escolhas de técnicas cinematográficas \cite{young2013plans}. Por fim, a interatividade diz respeito às narrativas geradas em ambientes interativos, onde a história pode ser influenciada. Um exemplo de cenário interativo trazido pelos autores são os jogos, onde a geração de histórias envolve a criação de sequências de ações que formam o enredo. 
+
+O planejamento de narrativa baseado em IA é bastante útil para modelar a coerência narrativa, equilibrar os objetivos dos personagens com os do autor e representar conflitos. \citeonline{young2013plans} trazem exemplos de sistemas pioneiros na geração de histórias baseadas em objetivos de personagens, assim como aqueles que buscavam equilibrar os objetivos dos personagens com as intenções do autor. 
+
+O artigo também destaca a possibilidade de utilizar algoritmos de planejamento para gerar suspense e surpresa. Sistemas que usam esses algoritmos simulam o processo de compreensão do leitor, usando modelos de planejamento para prever como o público vai interpretar a narrativa. As mesmas técnicas de planejamento podem ser usadas para gerar recursos visuais, como controle de câmeras que criam efeitos específicos (como o próprio suspense).
+
+Os autores afirmaram que a geração de narrativas interativas, como em jogos, apresenta desafios únicos, especialmente no que diz respeito ao paradoxo narrativo que envolve a tensão entre a estruturação da história e a liberdade de ação do jogador. No trabalho de \citeonline{young2013plans}, o planejamento pode ser usado para controlar personagens autônomos ou gerar enredos que se adaptam às ações do jogador. 
+
+\citeonline{young2013plans} concluem que tais abordagens têm sido amplamente usadas em ambientes interativos e não interativos e têm facilitado a geração de histórias, discursos e interatividade. Entretanto, ainda há desafios a serem superados, como a representação de conceitos narrativos mais complexos, como narradores não confiáveis e focalização. Ainda assim, os autores acreditam que as abordagens baseadas em planejamento continuarão a ser fundamentais para a criação de conteúdo narrativo rico e envolvente.
+
+\section{\textit{Language as Reality: A Co-creative Storytelling Game Experience in 1001 Nights Using Generative AI}}
+\noindent \citeonline{sun2023} apresentam \textit{``1001 Nights''}, um jogo narrativo que utiliza Inteligência Artificial Generativa \textit{(GenAI)}, incluindo modelos de geração de imagens e linguagem (LLMs). Inspirado na ideia de que "os limites da minha linguagem significam os limites do meu mundo", de Wittgenstein\footnote[3]{Ludwig Joseph Johann Wittgenstein foi um dos filósofos mais influentes do século XX. O trabalho de \citeonline{sun2023} cita a frase \textit{"The limits of my language are the limits of my world", da obra \textit{"Tractatus Logico-Philosophicus"} (1921), que discute a relação entre linguagem, pensamento e realidade.}}, o jogo explora o conceito de linguagem como realidade. A protagonista tem o poder de transformar palavras em objetos reais dentro do jogo, podendo usá-los como armas contra o Rei. 
+
+O jogo é dividido em duas fases: narrativa e batalha. Na fase de narrativa, os jogadores guiam o Rei a contar histórias que contêm palavras-chave, que se materializam como armas no jogo. Conforme as armas são coletadas, o mundo da história começa a invadir a realidade do jogo, criando uma fusão entre narrativa e \textit{gameplay}. O objetivo final é reescrever o destino da protagonista. \citeonline{sun2023} exemplificam o conceito de jogos nativos de IA, onde a \textit{GenAI} não é apenas um recurso adicional, mas é fundamental para a mecânica e a existência do jogo. 
+
+O artigo propõe o termo AI-Nativo para categorizar jogos onde a GenAI é essencial para a mecânica e existência do jogo. Diferente dos jogos baseados em IA tradicional, que utilizam técnicas como algoritmos de \textit{path-finding} ou árvores de decisão, os jogos AI-Nativos dependem da geração de conteúdo em tempo real, como diálogos e imagens, que não são predefinidos pelos desenvolvedores.
+
+Um dos principais desafios foi garantir que os jogadores se engajassem ativamente na criação de histórias, evitando entradas aleatórias ou sem sentido. Para isso, foi implementado um sistema de avaliação de histórias usando o GPT-4, onde o Rei avalia a validade da história e fornece feedback em tempo real. Se a história for considerada inválida, o Rei solicita que o jogador a reescreva, mantendo a coerência narrativa.
+
+\citeonline{sun2023} dizem que, embora existam desafios, como a imprevisibilidade dos modelos de IA, o jogo demonstra como a IA generativa pode ser usada para criar mecânicas de jogo inovadoras e experiências narrativas diferentes das que já existem. O artigo sugere que, à medida que a IA generativa evolui, novos métodos e abordagens serão necessários para equilibrar a liberdade criativa dos jogadores com a consistência narrativa e a imersão no jogo.
+
+\section{\textit{Petri-nets for game plot}}
+
+\noindent O trabalho de \citeonline{brom2006petri} apresenta uma forma inovadora de criar um enredo não linear e de gerenciar a história de acordo com esse enredo utilizando as redes de Petri. Os autores propõem uma técnica com a qual a narrativa pode evoluir de diversas formas com as ações do jogador, sem perder a coerência.
+
+A técnica utiliza dois modelos de redes de Petri: um protótipo e um modelo final. O protótipo serve para validar a trama em uma aplicação teste, sem que haja a necessidade de que o ambiente virtual esteja completo. O modelo final, por sua vez, integra eventos do ambiente virtual, como as ações do jogador ou o comportamento dos \textit{NPC's} (personagens não jogáveis), com o intuito de que a narrativa se adapte em tempo real.
+
+\citeonline{brom2006petri} enfatizam que a solução criada é especialmente eficaz para jogos com ambientes virtuais robustos e de longa duração, onde mais de um evento pode ocorrer em múltiplos espaços e simultaneamente. Ao combinar o controle de alto nível da narrativa, por meio das redes de Petri, com a autonomia dos \textit{NPCs}, que são guiados por planos reativos hierárquicos, a história é capaz de avançar de forma estruturada e mantendo a liberdade dos personagens virtuais.
+
+Um dos desafios explorados por \citeonline{brom2006petri} é a complexidade visual que as redes de Petri assumem ao serem usadas para tramas mais elaboradas. A fim de contornar esse problema, os autores sugerem a utilização do \textit{Microsoft Visio} para simplificar a representação dos enredos. Além disso, eles destacam a importância da realização de testes iterativos durante o design da narrativa.
+
+Por fim, os autores sugerem que essa abordagem pode ser integrada a \textit{frameworks} como o \textit{IVE (Intelligent Virtual Environment)}, podendo assim expandir suas aplicações em jogos ainda mais interativos, além de abrir caminho para pesquisas futuras que combinem métodos formais de design narrativo com técnicas de IA para criar experiências mais imersivas.
+
+\section{Considerações Finais}
+\label{comparacao}
+
+\noindent Este trabalho destaca-se por três contribuições principais em relação aos estudos existentes. Primeiramente, é o único a propor o uso de redes de Petri especificamente para validar narrativas geradas por IA, garantindo coerência em histórias produzidas automaticamente. Enquanto \citeonline{brom2006petri} empregam redes de Petri para modelar enredos pré-definidos, este trabalho usa a Rede de Petri como uma ferramenta de validação formal para conteúdo gerado por Inteligência Artificial a partir de um roteiro elaborado durante a pesquisa.
+
+Em segundo lugar, este trabalho estabelecerá uma abordagem metodológica clara e replicável, com um roteiro passo a passo que vai desde a geração da narrativa até sua validação estrutural. Isso contrasta com soluções pontuais, como o uso direto de GPT em \citeonline{chawla24}, ou discussões teóricas sobre planejamento narrativo, como em \citeonline{young2013plans}.
+
+Por fim, diferencia-se por priorizar ferramentas de IA generativa gratuitas e acessíveis, tornando o método viável para desenvolvedores independentes. Enquanto trabalhos como \citeonline{sun2023} e \citeonline{chawla24} dependem de modelos proprietários (ex.: GPT-4), este trabalho demonstra como alcançar resultados semelhantes com recursos abertos, ampliando o acesso à tecnologia.
+
+\begin{figure}[H]
+    \centering
+    \caption{Tabela de Comparação de Trabalhos Relacionados}
+    \includegraphics[width=0.95\linewidth]{imagens/tabalhosrel.png}
+    \caption*{}
+    \label{trabalhosrelacionados}
+\end{figure}
+
+A figura \ref{trabalhosrelacionados} ilustra a comparação dos trabalhos relacionados com a presente pesquisa. Note que o trabalho de \citeonline{young2013plans} não é marcado na tabela por se tratar de um trabalho com maior enfoque em revisão teórica (que foi importante para a fundamentação desta pesquisa), enquanto \citeonline{sun2023}, \citeonline{brom2006petri} e \citeonline{chawla24} trazem implementações concretas.

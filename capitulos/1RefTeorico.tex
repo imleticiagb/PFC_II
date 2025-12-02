@@ -1,0 +1,175 @@
+
+\noindent Neste capítulo, serão fornecidos os conceitos principais para o entendimento dos objetivos da pesquisa descrita neste documento. Na seção \ref{jogos digitais} serão discutidos os jogos eletrônicos, abrangendo definição, tipos e estrutura narrativa. A seção \ref{AI}  abordará os fundamentos da Inteligência Artificial, ao passo que a subseção \ref{gen AI} será dedicada especificamente à Inteligência Artificial Generativa. A seção \ref{modelagem} tratará sobre modelagem de \textit{Software} e, em particular, será apresentada a rede de Petri. 
+
+\section{Jogos Digitais}
+\label{jogos digitais}
+
+\noindent Definir o que é um jogo não é uma tarefa simples. Por se tratar de uma área em constante e acelerada evolução, torna-se cada vez mais complexo estabelecer uma definição precisa e abrangente o suficiente para englobar os novos tipos de \textit{games} que surgem ano após ano. Para os propósitos deste trabalho, a definição de \citeonline{gamedesign}, que define jogo como uma forma de entretenimento estruturada e regrada, na qual se tem um objetivo a ser alcançado, será adotada.
+
+\citeonline{homoludens} trata o jogo como um fenômeno cultural, uma evasão voluntária e consciente da vida real, que acontece dentro de um tempo e espaço definido e limitado.  Tanto \citeonline{gamedesign} quanto \citeonline{homoludens} consideram que os jogos têm a capacidade de ensinar, e que todo jogo traz algum tipo de conhecimento. Além disso, \citeonline{homoludens} ainda destaca a importância das regras para o bom funcionamento dos jogos. 
+
+\begin{citacao}
+    Regras de jogo são paradoxais: regras e diversão podem soar como duas coisas bem diferentes, mas regras são a fonte mais consistente de diversão do jogador. Podemos associar regras a ser barrado de fazer algo que realmente queremos, mas, nos jogos, nos submetemos voluntariamente às regras \cite{halfreal}.
+\end{citacao}
+
+Representação, interação, conflito e segurança são trazidos por \citeonline{artofgame} como aspectos essenciais dos jogos.  A representação diz respeito ao modo como um jogo cria um mundo fechado, autossuficiente e simplificado, com regras claras e sistemas inter-relacionados. A interação é a ideia de que o jogo permite que o jogador explore e influencie o mundo criado pelo jogo, gerando uma relação de causa e efeito. O conflito, por sua vez, aparece quando o jogador tenta alcançar um objetivo e encontra obstáculos no processo. Por fim, a segurança é o que garante que os conflitos permaneçam somente no jogo, jamais oferecendo riscos reais ao jogador.
+
+\citeonline{artofgame} separa os jogos em cinco categorias principais: jogos de tabuleiro, jogos de cartas, jogos atléticos, jogos infantis e jogos de computador. 
+
+\begin{itemize}
+    \item \textbf{Jogos de Tabuleiro:} os jogos de tabuleiro consistem em uma superfície dividida em setores, nos quais peças movidas pelo jogador constituem as jogadas. Cada jogo pode ter diferentes regras de como o jogador pode movimentar essas peças. Um exemplo comum é o xadrez.
+    \item  \textbf{Jogos de Cartas:} os jogos de cartas são jogados com um baralho de 52 cartas com diferentes naipes e símbolos (números de 1 a 10 e as letras A, J, Q e K). Os jogos giram em torno das combinações entre esses elementos. Cada jogo tem uma regra diferente para formar tais combinações.
+    \item  \textbf{Jogos Atléticos:} os jogos atléticos são jogos que dependem mais da capacidade física do jogador do que da capacidade mental. Esses jogos têm regras rigorosas acerca do que o jogador pode ou deve fazer.
+    \item  \textbf{Jogos Infantis:} os jogos infantis normalmente são jogados em grupos e possuem componentes mentais e físicos simples. No entanto, para os propósitos de seu livro, \citeonline{artofgame} exclui essas brincadeiras da categoria "jogo".
+    \item \textbf{Jogos de Computador:} os jogos de computador são jogados em cinco tipos diferentes de máquinas, sendo elas os \textit{arcades}, \textit{hand helds} (consoles portáteis), jogos caseiros com vários programas, máquinas como o \textit{ATARI 2600}, computadores pessoais e grandes computadores \textit{mainframe}. Os computadores permitem que os jogos utilizem gráficos animados, além de agir como oponentes dentro dos \textit{games} a de depender do gênero do jogo que está sendo jogado. Além disso, os jogos de computador exigem coordenação entre mãos e olhos. 
+\end{itemize}
+
+Vale ressaltar que a definição de \citeonline{artofgame} sobre jogos de computador é válida. Entretanto, considerando a evolução da tecnologia desde então, seria interessante considerar também que os jogos de computador podem ser jogados em dispositivos eletrônicos móveis, como tablets e celulares, por exemplo.
+
+\subsection{Narrativa em Jogos Digitais}
+\label{estrutura narrativa}
+
+\noindent É de suma importância, antes de definir o que é uma narrativa, definir o que é história e enredo. \citeonline{narrativasbarry} define história como uma sequência cronológica de eventos, enredo como uma organização causal dos eventos, e narrativa como uma história recontada em uma sequência temporal. Baseando-se nessas definições, \citeonline{narrativasbarry} ainda afirma que as narrativas são mais maleáveis do que as histórias ou os enredos.
+
+A narrativa cinematográfica relacionada aos jogos tem sido uma grande tendência no mercado na última década. \citeonline{gamedesign} destaca que a comunidade de \textit{game design} demonstrou grande interesse em tornar os jogos mais cinematográficos por meio da narrativa. \citeonline{jenkins2004game} diz que a aplicação da teoria do cinema aos jogos pode parecer pesada e literal, muitas vezes falhando em reconhecer as profundas diferenças entre as duas mídias.
+
+\begin{citacao}
+Muitas estratégias criadas pela literatura e
+apropriadas num primeiro momento pelo cinema e
+pela mídia de massa, agora são amplamente utilizadas
+nos jogos eletrônicos para seduzir e dirigir a
+percepção do público, inserindo-o no espaço da
+ficção e simulação. É importante destacar que os
+jogos eletrônicos apresentam suas histórias de
+maneira peculiar, isto é, um tipo específico de
+narrativa, que por sua vez, pode manter relações com
+outras narrativas midiáticas, combinando ficção e não
+ficção \cite{alves2009crescente}.
+\end{citacao}
+
+O tempo e o espaço também são elementos importantes para o andamento de uma narrativa. \citeonline{alves2009crescente} explicam o tempo como sendo uma base para a organização da história e um auxílio para a compreensão das ações que transformam os estados, enquanto o espaço se trata da ambientação da narrativa, ou seja: onde ela se passa. De acordo com \citeonline{jenkins2004game}, ao se referir a histórias de jogos, refere-se especificamente aos jogos nos quais o jogador pode participar ou testemunhar os eventos narrativos. \citeonline{alves2009crescente} afirmam que as narrativas dos jogos têm a função de transportar o jogador para dentro daquele mundo.
+
+\section{Inteligência Artificial}
+\label{AI}
+\noindent A Inteligência Artificial é considerada uma área relativamente nova, que surgiu como uma evolução dentro da computação pouco depois da Segunda Guerra Mundial, em 1956, conforme diz \citeonline{iapeter}.  Eles consideram a IA como um campo universal e dividem sua definição em quatro grupos, sendo eles: pensando como humano; agindo como seres humanos; pensando racionalmente e agindo racionalmente.
+
+No entanto, apesar de ter começado a ser estudada academicamente apenas em 1956, no início dos anos 50 a ficção científica já tratava de máquinas inteligentes e das leis da robótica.  \citeonline{eurobo} já tratava nessa época sobre os impactos da robótica e da Inteligência Artificial na sociedade, além de destacar em vários momentos a evolução da IA dentre os contos do livro, mostrando como em dado momento ela se torna tão parecida com a inteligência humana que a moral se confunde.
+
+\citeonline{Schank_1987} afirma que a definição de IA depende dos objetivos dos pesquisadores, uma vez que o desenvolvimento dela não está completo. Essa visão se mantém nos dias atuais, uma vez que a Inteligência Artificial está em constante evolução. Ainda segundo \citeonline{Schank_1987}, a IA busca construir uma máquina inteligente, bem como compreender a natureza da inteligência; portanto, é tanto uma ciência quanto uma tecnologia.
+
+\citeonline{tomai} traz um contexto histórico da Inteligência Artificial. Entre os anos 50 e 70, o maior incentivo para o desenvolvimento nesta área era governamental, impulsionado pela Guerra Fria. Já nessa época, havia debate sobre como ela deveria funcionar. Havia acadêmicos que defendiam que ela deveria ser estruturada como um computador qualquer, usando estruturas como \textit{if-then-else}, enquanto outra vertente defendia que os sistemas deveriam se basear no próprio cérebro humano e nas redes neurais.
+
+Após os anos 70, os estudos no campo de IA enfrentaram uma considerável redução, já que o governo dos Estados Unidos tornou-se cada vez mais rigoroso com o financiamento dos estudos. Nos anos 80 e 90, ainda segundo \citeonline{tomai}, os sistemas especialistas se popularizaram, mas logo mostraram ser específicos demais, o que os impedia de serem usados em outras áreas do conhecimento.
+
+O avanço da tecnologia como um todo, bem como a melhora da infraestrutura tecnológica com o passar dos anos reforçaram o crescimento da IA, possibilitando que esse campo se desenvolvesse mais e mais, chegando em modelos cada vez mais robustos. \citeonline{tomai} divide a IA em duas categorias: fraca e forte. A fraca trata-se dos modelos nos quais apenas tarefas específicas são executadas, enquanto a forte já diz respeito às máquinas autoconscientes. Ele afirma que, até o momento, a IA encontra-se no nível fraco. 
+
+
+\subsection{Inteligência Artificial Generativa}
+\label{gen AI}
+\noindent Com os conceitos gerais da Inteligência Artificial previamente discutidos, esta subseção dedica-se à Inteligência Artificial Generativa (\textit{Gen AI}).  Segundo \citeonline{genai}, o termo IA generativa não tem uma definição universalmente aceita, mas a comunidade científica o associa a modelos mais complexos, que geram material semelhante ao humano.
+
+\begin{citacao}
+O termo “Inteligência Artificial Generativa” está sendo utilizado em uma ampla variedade de contextos para descrever uma gama diversificada de sistemas, capacidades, aplicações e implicações. Em muitos casos, parece funcionar como um termo genérico — um rótulo aplicável a qualquer sistema de IA capaz de produzir novos conteúdos, seja texto, imagem, áudio, vídeo, código ou dados estruturados \cite{genai}.
+\end{citacao}
+
+\citeonline{ibmai} afirmam que a IA generativa é uma subcategoria da Inteligência Artificial baseada em modelos de \textit{deep learning} (aprendizado profundo), que são algoritmos que simulam tomada de decisão e aprendizado do cérebro humano. Segundo eles, a IA generativa funciona conforme mostra a figura \ref{fig:gen-ai}.
+
+\begin{itemize}
+    \item \textbf{Treinamento:} os modelos de IA generativa são treinados com um enorme volume de dados e usam técnicas de \textit{deep learning} para isso. É nessa fase que o modelo aprende os padrões presentes nos dados, permitindo que ele replique tentando simular um humano.
+    \item \textbf{Ajuste:} depois de treinados, os modelos serão ajustados com dados mais específicos. Assim, o comportamento é refinado para ficar cada vez menos generalista. Além disso, existe a possibilidade de reforço humano durante o aprendizado, onde as pessoas pontuam possíveis melhoras acerca do conteúdo gerado.
+    \item \textbf{Geração:} a IA generativa é capaz e gerar conteúdo original com base em comandos fornecidos pelo usuário e inclui mecanismos de \textit{feedback} para ajustes contínuos, melhorando os resultados ao longo do tempo.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \caption{Fluxo de funcionamento da IA generativa}
+    \includegraphics[width=0.5\linewidth]{imagens/fluxo_gen_ai.pdf}
+    \label{fig:gen-ai}
+\end{figure}
+Assim, a IA generativa pode ser entendida não só como uma evolução ou uma subcategoria dos modelos tradicionais de IA, mas como um novo paradigma, capaz de criar conteúdo original que pode impactar diversas áreas do conhecimento e da sociedade. 
+
+\section{Modelagem de Software}
+\label{modelagem}
+\noindent Segundo \citeonline{sommerville}, a modelagem de sistemas, ou modelagem de software, é uma representação gráfica de um sistema de \textit{software}, usada para esclarecer o que um sistema pré-existente faz e para explicar os requisitos de um novo sistema para documentá-lo e, posteriormente, implementá-lo. 
+
+Para fazer um modelo, é necessário levantar todos os requisitos que o \textit{software} em questão exige para ser desenvolvido. \citeonline{sommerville} define os requisitos como ``as descrições do que o sistema deve fazer, os serviços que oferece e as restrições a seu funcionamento''. \citeonline{engenhariarequisitos} afirmam que a fase do levantamento de requisitos fornece as informações necessárias para nortear a modelagem de um sistema.
+
+\citeonline{engenhariarequisitos} também destacam que a modelagem de um sistema serve não apenas para tornar a informação mais visualmente amigável, mas também para identificar informações incorretas ou redundantes, bem como lacunas.  
+
+\citeonline{sommerville} separa os tipos de modelagem em 4: modelos de contexto, modelos de interação, modelos estruturais e modelos comportamentais.
+
+\begin{itemize}
+    \item \textbf{Modelos de Contexto:} os modelos de contexto descrevem o ambiente do sistema, incluindo sua interação com outros sistemas e com usuários (ou seja, atores externos), mas não detalham os tipos de relacionamento entre esses sistemas. Normalmente, os modelos de contexto são acompanhados por diagramas de atividades ou modelos de processos de negócio. Seu objetivo é definir quem ou o quê interage com o sistema.
+    \item \textbf{Modelos de Interação:} os modelos de interação servem para representar as dinâmicas de comunicação entre cada componente do sistema, usuários e outros sistemas. \citeonline{sommerville} cita os diagramas de caso de uso, que modelam as interações do sistema com atores externos, e diagramas de sequência, que servem para representar as interações internas. Seu objetivo é definir como as interações com o sistema acontecem.
+    \item \textbf{Modelos Estruturais:} os modelos estruturais mostram como o sistema se organiza, mostrando seus componentes (como classes, objetos, entre outros) e os relacionamentos entre eles. Eles servem para compreender como a arquitetura do \textit{software} é construída antes que o sistema seja, de fato, implementado.
+    \item \textbf{Modelos Comportamentais:} os modelos comportamentais modelam o comportamento de um sistema em tempo de execução. Isso inclui fluxo de processos, respostas a eventos e interações dinâmicas entre componentes. Esse tipo de modelagem antecipa possíveis erros antes da implementação, documentam a lógica para manutenção posterior e permitem a simulação de cenários diversos e complexos. Seu objetivo é mostrar como o sistema reage a entradas, eventos ou mudanças de estado. As redes de Petri, que serão detalhadas logo a seguir, se encaixam nessa categoria.
+\end{itemize}
+\subsection{Redes de Petri}
+\label{petri}
+\noindent Como explicado na seção anterior, as redes de Petri são um tipo de modelagem de \textit{software}. \citeonline{petri-net} as define como uma ferramenta matemática de estudo e representação de sistemas, que pode revelar aspectos importantes sobre a estrutura e o comportamento do sistema modelado. Elas foram projetadas para modelar sistemas com componentes concorrentes que interagem entre si.
+
+As redes de Petri surgiram a partir da tese de Carl Adam Petri\footnote[1]{Carl Adam Petri foi um matemático e cientista da computação alemão. Ele inventou as redes de Petri aos treze anos, em 1939, e as documentou vinte e três anos depois, em 1962.}, \textit{``Kommunikation mit Automaten''} (Comunicação com Autômatos), de 1962. \citeonline{petripaulo} elucidam que, ao chamar a atenção de outros pesquisadores, Petri e esses demais desenvolveram boa parte da teoria, notação e representação das redes de Petri. 
+
+\citeonline{petri-net} define as redes de Petri como uma 4-upla $C = (P, T, I, O)$, onde:
+
+\begin{itemize}
+    \item \textbf{P =} ${p_1, p_2, ..., p_n}$: um conjunto finito de lugares com $ n \geq 0$;
+    \item  \textbf{T = } ${t_1, t_2, ..., t_m}$: um conjunto finito de transições com $ m \geq 0$;
+    \item \textbf{I = } função de entrada \textit{(input function)} $\rightarrow$ mapeia transições para conjuntos (ou \textit{bags}) de lugares;
+    \item \textbf{O = } função de saída \textit{(output function)} $\rightarrow$ mapeia transições para conjuntos (ou \textit{bags}) de lugares.
+\end{itemize}
+
+A figura \ref{fig:4-upla} mostra uma rede de Petri descrita pela quádrupla $C = (P, T, I, O)$.
+
+
+\begin{figure}[h]
+    \centering
+    \caption{Rede de Petri representada pela quádrupla}
+    \includegraphics[width=0.5\linewidth]{imagens/fig_2_1_peterson.png}
+    \caption*{Fonte: \cite{petri-net}}
+    \label{fig:4-upla}
+\end{figure}
+
+
+Essa mesma estrutura descrita pela quádrupla ilustrada pela figura \ref{fig:4-upla} pode ser representada por um multigrafo bipartido e dirigido. Um multigrafo é um tipo de grafo onde podem haver várias arestas entre o mesmo par de nós. Por ser dirigido, suas arestas têm uma direção definida, e por ser bipartido, seus nós são divididos em dois conjuntos disjuntos (no caso das redes de Petri, lugar e transição), e as arestas só se ligam a nós de conjuntos distintos.
+
+Um círculo (O) representa um lugar; uma barra (|) representa uma transição. Como os círculos representam graficamente os lugares, eles serão denominados lugares. Da mesma forma, as barras serão denominadas transições. De acordo com \citeonline{petri-net}, um lugar $p_i$ é considerado um lugar de entrada da transição $t_j$ se $p_i$ está presente no conjunto de entrada da transição $t_j$. De modo análogo, a presença de $p_i$ no conjunto de saída da transição $t_j$ configura $p_i$ como um lugar de saída \cite{petri-net}.
+
+Os \textit{tokens} são elementos que, associados aos lugares, representam o estado atual do sistema modelado. A distribuição deles nos lugares é chamada de marcação. Formalmente, uma marcação \textit{M} é uma função que associa um número não negativo de \textit{tokens} $M(p)$ a cada lugar $p \in P$. O número de \textit{tokens} consumidos ou produzidos por uma transição é determinado pela multiplicidade do lugar nas funções de entrada e saída. A figura \ref{fig:grafo-petri} ilustra a rede descrita pela quádrupla da figura \ref{fig:4-upla}. Ela contém lugares, transições e \textit{tokens}.
+
+\begin{figure}[h]
+    \centering
+    \caption{Representação gráfica da rede de Petri da \autoref{fig:4-upla}}
+    \includegraphics[width=0.5\linewidth]{imagens/rede_petri_marcada_2_1_peterson.png}
+    \caption*{Fonte: \cite{petri-net}.}
+    \label{fig:grafo-petri}
+\end{figure}
+
+
+Na notação de \citeonline{petri-net}, as funções $I$ e $O$ mapeiam transições para os conjuntos de lugares, permitindo que um lugar apareça mais de uma vez. A multiplicidade de um lugar $p$ em $I(t)$, denotada por $\#(p, I(t))$, indica quantos \textit{tokens} a transição $t$ consome de $p$. De forma análoga, a multiplicidade $\#(p, O(t))$ indica quantos \textit{tokens} $t$ produz em $p$. Uma transição $t$ está habilitada se, para todo $p \in I(t)$, $M(p) \geq \#(p, I(t))$.  O conceito de multiplicidade muito se assemelha ao conceito de peso que \citeonline{janettepetri} trazem, com a diferença que \citeonline{petri-net} não representa os ``pesos'' graficamente, como rótulos dos grafos. 
+
+Além de sua estrutura formal, as redes de Petri permitem a análise de propriedades fundamentais dos sistemas modelados. Tais propriedades podem ser classificadas como estruturais — independentes da marcação inicial — e comportamentais — que dependem diretamente da evolução do sistema ao longo do tempo. Segundo \citeonline{murata-rede-petri}, essas propriedades incluem, mas não estão limitadas a alcançabilidade, vivacidade, reversibilidade e limitabilidade.
+
+\begin{itemize}
+    \item \textbf{Alcançabilidade}: a alcançabilidade é uma propriedade que analisa se uma marcação específica $M_n$ pode ser alcançada a partir de uma marcação inicial $M_0$ por meio de uma sequência de disparos de transições $t$. $M_n$ é alcançável se existe uma sequência de disparos $\sigma = t_1, t_2, t_3 ... t_n$ tal que $M_0$ é transformada em $M_n$.
+    \item \textbf{Vivacidade}: a vivacidade está relacionada à ausência de \textit{deadlocks}. Uma transição é considerada viva se, em qualquer marcação alcançável a partir da marcação inicial $M_0$, ela sempre pode ser disparada novamente após alguma sequência de disparos, não importa qual seja a sequência disparada. Formalmente, uma Rede de Petri $(N, M_0)$ é viva se todas as suas transições são vivas. Para sistemas complexos, a vivacidade pode ser relaxada em níveis hierárquicos
+\[ \text{L4-viva} \Rightarrow \text{L3-viva} \Rightarrow \text{L2-viva} \Rightarrow \text{L1-viva}, \]
+onde:
+\begin{itemize}
+    \item \textbf{L0-viva (morta):} uma transição $t$ é L0-viva se nunca pode ser disparada em nenhuma sequência de disparos $L (M_0)$.
+    \item \textbf{L1-viva (potencialmente disparável): }uma transição $t$ é L1-viva se pode ser disparada pelo menos uma vez em alguma sequência $L (M_0)$.
+    \item \textbf{L2-viva:} uma transição $t$ é L2-viva se, para qualquer inteiro positivo $k$, existe uma sequência onde $t$ é disparada pelo menos $k$ vezes.
+    \item \textbf{L3-viva:} uma transição $t$ é L3-viva se existe uma sequência infinita onde $t$ aparece infinitamente.
+    \item \textbf{L4-viva (ou apenas viva):} uma transição $t$ é L4-viva se é L1-viva para todas as marcações $M \in R (M_0)$.
+
+ 
+\end{itemize}
+    \item \textbf{Reversibilidade}: uma Rede de Petri é reversível se, a partir de qualquer marcação alcançável $M \in R (M_0)$, é possível retornar à marcação inicial $M_0$. Isso significa que o sistema pode sempre ser reinicializado. 
+\begin{itemize}
+        \item \textbf{Estado \textit{Home:}} é uma marcação $M'$ que pode ser alcançada a partir de qualquer outra marcação em $M \in R (M_0)$. Diferente da reversibilidade, não é necessário retornar ao estado inicial, apenas a um estado específico $M'$.
+    \end{itemize}
+    \item \textbf{Limitabilidade}: uma Rede de Petri é dita $k$-limitada se o número de \textit{tokens} em cada lugar não excede um valor finito $k$ para qualquer marcação alcançável a partir de $M_0$. Se $k=1$ a rede é chamada de segura (\textit{safe}), ou seja: garante que nenhum lugar terá mais de 1 \textit{token}, evitando conflitos por recursos compartilhados. Essa propriedade é essencial para garantir que \textit{buffers} ou registros em sistemas modelados não sofram \textit{overflow} \footnote[2]{Se um valor excede a capacidade de armazenamento ou processamento de um sistema, é dito que aconteceu um \textit{overflow}.}, independentemente da sequência de disparos executada. 
+\end{itemize}
+
+Vale ressaltar que as propriedades são independentes entre si. Por exemplo, uma rede pode ser reversível, mas não viva ou limitada, e vice-versa.
+

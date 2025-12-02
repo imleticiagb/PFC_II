@@ -1,0 +1,495 @@
+%Sugerimos que não haja modificação neste arquivo, sob risco de alterar o formato
+
+\ProvidesPackage{abntex2/abntex2-bcc-ufj}[2023/06/20 Criacao desta customizacao do abnTeX2]
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+%\usepackage[breaklinks]{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{ltablex} % para usar tabelas longas - quando é maior que 1 página
+\usepackage{longtable}
+
+\usepackage{fancyhdr,graphicx,amsmath,amssymb}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{float}
+\usepackage{appendix}
+%\include{pythonlisting}
+
+\def\Year{\expandafter\YEAR\the\year}
+\def\YEAR#1#2#3#4{#1#2#3#4}
+
+% ------------------------------------------------------------
+% título do capítulo
+\renewcommand{\ABNTEXchapterfont}{\sffamily}
+\renewcommand{\ABNTEXchapterfontsize}{\bfseries\fontsize{22}{0}\selectfont}
+
+% seção 1.1
+\renewcommand{\ABNTEXsectionfont}{\ABNTEXchapterfont}
+\renewcommand{\ABNTEXsectionfontsize}{\bfseries\fontsize{16}{0}\selectfont}
+
+% seção 1.1.1
+\renewcommand{\ABNTEXsubsectionfont}{\ABNTEXsectionfont}
+\renewcommand{\ABNTEXsubsectionfontsize}{\itshape\bfseries\fontsize{14}{0}\selectfont}
+
+% seção 1.1.1.1
+\renewcommand{\ABNTEXsubsubsectionfont}{\itshape\ABNTEXsubsectionfont}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\itshape\bfseries\fontsize{12}{0}\selectfont}
+
+% seção 1.1.1.1.1
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\ABNTEXsubsubsectionfont}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\itshape\normalsize}
+
+
+%%%%%%%%% sumário
+
+%retirar espaçamento entre capítulos , padrão era 1em
+\setlength{\cftbeforechapterskip}{0em}
+ %
+  % Fontes das entradas do sumario
+ %
+  
+  
+  \renewcommand{\cftchapterfont}{\bfseries\large}
+  \renewcommand{\cftchapterpagefont}{\cftchapterfont}
+  %
+  \renewcommand{\cftsectionfont}{\normalsize}
+  \renewcommand{\cftsectionpagefont}{\cftsectionfont}
+  %
+  \renewcommand{\cftsubsectionfont}{\bfseries\normalsize}
+  \renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
+  %
+  % 
+  \renewcommand{\cftsubsubsectionfont}{\itshape\normalsize}
+  \renewcommand{\cftsubsubsectionpagefont}{\itshape\cftsubsubsectionfont}
+  %
+  %
+  \renewcommand{\cftparagraphfont}{\normalsize} %\footnotesize}
+  \renewcommand{\cftparagraphpagefont}{\itshape\bfseries\cftparagraphfont}
+  %
+  %
+  \renewcommand{\cftparagraphfont}{\itshape\bfseries}
+  \renewcommand{\cftparagraphpagefont}{\bfseries\cftparagraphfont}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% No caso de Sumario (TOC) especifico da ABNT-6027-2012
+
+%%%%%%%%%%%%% 
+\makeatletter
+\let\oldcontentsline\contentsline
+\def\contentsline#1#2{%
+	\expandafter\ifx\csname l@#1\endcsname\l@section
+	\expandafter\@firstoftwo
+	\else
+	\expandafter\@secondoftwo
+	\fi
+	{%
+		\oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+	}{%
+	\oldcontentsline{#1}{#2}%
+}%
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% Comandos de dados para CAPA e FOLHA DE ROSTO 
+% alterado por Marcos Wagner em 01/06/2023
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+% Comandos de dados - titulo do documento
+\renewcommand{\titulo}[1]{\title{#1}}
+\renewcommand{\imprimirtitulo}{\thetitle}
+
+% Comandos de dados - autor (use \and para multiplos autores)
+\renewcommand{\autor}[1]{\author{#1}}
+\renewcommand{\imprimirautor}{\theauthor}
+
+% Comandos de dados - data
+\renewcommand{\data}[1]{\date{#1}}
+\renewcommand{\imprimirdata}{\thedate}
+
+% Comandos de dados - instituicao
+\providecommand{\imprimirinstituicao}{}
+\renewcommand{\instituicao}[1]{\renewcommand{\imprimirinstituicao}{#1}}
+
+% Comandos de dados - departamento
+\providecommand{\imprimirdepartamento}{}
+\newcommand{\departamento}[1]{\renewcommand{\imprimirdepartamento}{#1}}
+
+% Comandos de dados - programa
+\providecommand{\imprimirprograma}{}
+\newcommand{\programa}[1]{\renewcommand{\imprimirprograma}{#1}}
+
+
+% Comandos de dados - email programa
+\providecommand{\imprimiremailprograma}{}
+\newcommand{\emailprograma}[1]{\renewcommand{\imprimiremailprograma}{#1}}
+
+% Comandos de dados - site programa
+\providecommand{\imprimirsiteprograma}{}
+\newcommand{\siteprograma}[1]{\renewcommand{\imprimirsiteprograma}{#1}}
+
+
+
+\newcommand{\imprimirporNome}{\porNome}
+
+
+
+% Comandos de dados - local
+\providecommand{\imprimirlocal}{}
+\renewcommand{\local}[1]{\renewcommand{\imprimirlocal}{#1}}
+
+% Comandos de dados - preambulo
+\providecommand{\imprimirpreambulo}{}
+\renewcommand{\preambulo}[1]{\renewcommand{\imprimirpreambulo}{#1}}
+
+% Comandos de dados - preambulo ata defesa
+\providecommand{\imprimirpreambuloatadefesa}{}
+\newcommand{\preambuloatadefesa}[1]{\renewcommand{\imprimirpreambuloatadefesa}{#1}}
+
+
+
+
+%
+% Comandos de dados - area de concentração
+\providecommand{\imprimirareaconcentracaoRotulo}{}
+\providecommand{\imprimirareaconcentracao}{}
+\newcommand{\areaconcentracao}[2][\areaconcentracaoname]%
+  {\renewcommand{\imprimirareaconcentracaoRotulo}{#1}%
+   \renewcommand{\imprimirareaconcentracao}{#2}}
+
+% Comandos de dados - orientador
+%\providecommand{\imprimirorientadorRotulo}{}
+%\providecommand{\imprimirorientador}{}
+%\renewcommand{\orientador}[1][\orientadorname]
+%  {\renewcommand{\imprimirorientadorRotulo}{#2}
+ %  \renewcommand{\imprimirorientador}{#2}}
+
+% Comandos de dados - orientador
+\providecommand{\imprimirorientadorRotulo}{}
+\providecommand{\imprimirorientador}{}
+\renewcommand{\orientador}[2] [\orientadorname]{\renewcommand{\imprimirorientador}{#2}}
+
+
+% Comandos de dados - coorientador
+\providecommand{\imprimircoorientadorRotulo}{}
+\providecommand{\imprimircoorientador}{}
+\renewcommand{\coorientador}[2][\coorientadorname]%
+  {\renewcommand{\imprimircoorientadorRotulo}{#1}%
+   \renewcommand{\imprimircoorientador}{#2}}
+
+% Comandos de dados - tipo de trabalho
+\providecommand{\imprimirtipotrabalho}{}
+\renewcommand{\tipotrabalho}[1]{\renewcommand{\imprimirtipotrabalho}{#1}}
+
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% IMPRESSOES PADROES DE CAPA E FOLHA DE ROSTO
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+% ---
+% Impressão da Capa
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+    \center
+        { \ABNTEXchapterfont\fontsize{12}{12}\selectfont \imprimirinstituicao \\
+    }
+    \vspace{4cm}
+    { \ABNTEXchapterfont\fontsize{12}{12}\selectfont\imprimirautor
+    }
+
+    \vfill
+    \begin{center}
+    \ABNTEXchapterfont\Large\bfseries\selectfont\imprimirtitulo
+    \end{center}
+    \vfill
+    
+ 
+   \vspace{1.4cm}
+    
+  
+
+    {\ABNTEXchapterfont\fontsize{12}{12}\selectfont\imprimirlocal}
+    \par
+    {\enspace\ABNTEXchapterfont\fontsize{12}{12}\selectfont\imprimirdata}
+    \vspace*{1cm}
+  \end{capa}
+}
+
+% ---
+% Conteudo da Folha de Rosto --- padrão 2023 RI
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+
+    %\vspace*{1cm}
+    { \ABNTEXchapterfont\fontsize{12}{12}\selectfont\imprimirautor
+    }
+	
+    \vspace*{\fill}\vspace*{\fill}
+    \begin{center}
+      \ABNTEXchapterfont\Large\bfseries\selectfont\imprimirtitulo
+    \end{center}
+    \vspace*{\fill}
+	
+    \abntex@ifnotempty{\imprimirpreambulo}{%
+      %\hspace{0.20\textwidth}
+      \hspace{2cm}
+      \hfill \begin{minipage}{.55\textwidth}
+      	\SingleSpacing
+         \imprimirpreambulo
+          
+            
+         
+             \vspace*{1cm}
+            {Orientador(a):\imprimirorientador\par}
+               \vspace*{0.5cm} \abntex@ifnotempty{\imprimircoorientador}{%
+               {\imprimircoorientador}%
+            }%
+            \end{minipage}%  
+            
+       
+       \vspace*{\fill}
+    }%
+
+      
+    \vspace*{\fill}
+
+    {\fontsize{12}{12}\selectfont\imprimirlocal}
+    \par
+    {\enspace\fontsize{12}{12}\selectfont\imprimirdata}
+    \vspace*{1cm}
+
+  \end{center}
+}
+\makeatother
+
+
+% ---
+% Ata de defesa
+% ---
+\newenvironment{atadefesa}[1][\atadefesaname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
+\newenvironment{atadefesa*}[1][\atadefesaname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
+
+\newcommand{\imprimiratadefesastar}[1]{%
+  \begin{atadefesa*}{#1}
+     \atadefesacontent
+  \end{atadefesa*}}
+
+\newcommand{\imprimiratadefesanostar}[1]{%
+  \begin{atadefesa}{#1}
+     \atadefesacontent
+  \end{atadefesa}}
+
+\makeatletter
+\newcommand{\imprimiratadefesa}[1][\atadefesaname]{%
+   \@ifstar
+     \imprimiratadefesastar  
+     \imprimiratadefesanostar
+}
+\makeatother
+% ---
+
+
+
+
+
+
+
+
+
+
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+
+%corrige espaçamento entre capítulo e texto para modelo ufpe
+\setlength{\afterchapskip}{0.85cm}
+
+%corrige espaçamento entre seções
+\titlespacing{\section}{0cm}{0.85cm}{0.64cm}
+\titlespacing{\subsection}{0cm}{0.85cm}{0.64cm}
+\titlespacing{\subsubsection}{0cm}{0.85cm}{0.64cm}
+\titlespacing{\subsubsubsection}{0cm}{0.85cm}{0.64cm}
+\titlespacing{\subsubsubsubsection}{0cm}{0.85cm}{0.64cm}
+
+%%%%********************************************************************
+% fancy quotes
+\definecolor{quotemark}{gray}{0.7}
+
+\makeatletter
+\def\fquote{%
+    \@ifnextchar[{\fquote@i}{\fquote@i[]}%]
+           }%
+\def\fquote@i[#1]{%
+    \def\tempa{#1}%
+    \@ifnextchar[{\fquote@ii}{\fquote@ii[]}%]
+                 }%
+\def\fquote@ii[#1]{%
+    \def\tempb{#1}%
+    \@ifnextchar[{\fquote@iii}{\fquote@iii[]}%]
+                      }%
+\def\fquote@iii[#1]{%
+    \def\tempc{#1}%
+    \vspace{-3em}%
+    \noindent%
+    \begin{list}{}{%
+         \setlength{\leftmargin}{0.1\textwidth}%
+         \setlength{\rightmargin}{0.1\textwidth}%
+                  }%
+         \item[]%
+         \begin{picture}(0,0)%
+         \put(-15,-5){\makebox(0,0){\scalebox{3}{\textcolor{quotemark}{``}}}}%
+         \end{picture}%
+         \begingroup\itshape}%
+ %%%%********************************************************************
+ \def\endfquote{%
+ \endgroup\par%
+ \makebox[0pt][l]{%
+ \hspace{0.8\textwidth}%
+ \begin{picture}(0,0)(0,0)%
+ \put(15,15){\makebox(0,0){%
+ \scalebox{3}{\color{quotemark}''}}}%
+ \end{picture}}%
+ \ifx\tempa\empty%
+ \else%
+   \ifx\tempc\empty%
+       \hfill\rule{100pt}{0.5pt}\\\mbox{}\hfill\tempa,\ \emph{\tempb}%
+   \else%
+       \hfill\rule{100pt}{0.5pt}\\\mbox{}\hfill--- \tempa,\ \emph{\tempb},\ \tempc%
+   \fi\fi\par%
+   \vspace{0.5em}%
+ \end{list}%
+ }%
+ 
+ \makeatother
+ 
+  
+\newenvironment{frametext}[1]{%
+  \begin{center}
+    \setlength{\fboxsep}{1em}
+    \setlength{\fboxrule}{2pt}
+    \fbox{\parbox{0.7\textwidth}{#1}}\par}
+  {\end{center}}
+   
+
+
+
+
+\newtheorem{mydef}{Defini\c{c}\~ao}
+  
+  
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% criar lista de quadros
+
+\makeatletter
+% Novo list of (listings) para QUADROS
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+
+\newfloat{quadro}{loq}{lqo}
+\floatname{quadro}{Quadro}
+
+\newlistof{listofquadros}{loq}{Lista de quadros}
+\newlistentry{quadro}{loq}{0}
+
+
+% configurações para atender às regras da ABNT
+\counterwithout{quadro}{chapter}
+\renewcommand{\cftquadroname}{\quadroname\space} 
+\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+
+% Configuração de posicionamento padrão:
+\setfloatlocations{quadro}{hbtp}
+\makeatother         
+            
+  
+
+
+% ----------------------------------------------------------
+% HYPERLINKS
+% ----------------------------------------------------------
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2 - change by bifm@cin.ufpe.br},
+		pdfkeywords={cin}{ufpe}{abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=false,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+%-------------------------------------------------------------------------
+
+
+\usepackage{tikz}
+\usepackage{calc}
+\usepackage{dingbat}
+\usepackage{pifont}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\def\scalecheck{\resizebox{\widthof{\checkmark}*\ratio{\widthof{x}}{\widthof{\normalsize x}}}{!}{\checkmark}}
+%that's defined it - now for a test
+
+
+
+
+\newcommand{\figuraref}[1]{\namereftag{Figura}{#1}}
+\newcommand{\figurarefpl}[1]{\namereftag{Figuras}{#1}}
+
+\newcommand{\tabelaref}[1]{\namereftag{Tabela}{#1}}
+\newcommand{\tabelarefpl}[1]{\namereftag{Tabelas}{#1}}
+
+\newcommand{\vejadefinicaoref}[1]{(veja \namereftag{Defini\c{c}\~ao}{#1})}
+\newcommand{\definicaoref}[1]{\namereftag{Defini\c{c}\~ao}{#1}}
+\newcommand{\definicaorefpl}[1]{\namereftag{Defini\c{c}\~oes}{#1}}
+
+\newcommand{\namereftag}[2]{\textbf{#1~\ref{#2}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

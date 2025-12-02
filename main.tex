@@ -1,0 +1,394 @@
+%% abtex2-modelo-projeto-pesquisa.tex, v-1 marcoswagner PFC 2 2023
+%% Copyright 2020-2023 by abnTeX2 group at BCC-UFJ http://www.abntex.net.br/ 
+%%
+%% This work consists of the files abntex2-modelo-projeto-pesquisa.tex
+%% and abntex2-modelo-references.bib
+%%
+
+% ---------------------------------------------------------------------
+% ---------------------------------------------------------------------
+% abnTeX2: Modelo Adaptado de Monografia em conformidade com 
+% ABNT NBR 15287:2011 Informação e documentação - Monografia 
+% --------------------------------------------------------------------- 
+% ---------------------------------------------------------------------
+\documentclass[
+	12pt,				
+	oneside,
+	a4paper,		
+    sumario=tradicional,
+	english,			
+	french,				
+	spanish,			
+	brazil,				
+	documento
+	]{abntex2}
+
+% ---
+% Configurações
+% ---
+\usepackage{abntex2/abntex2-bcc-ufj}
+\renewcommand*\arraystretch{1.2} 
+\usepackage{pdfpages} %para incluir pdf como páginas
+
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}					
+\usepackage[T1]{fontenc}		
+\usepackage[utf8]{inputenc}	
+\usepackage{lastpage}		
+\usepackage{indentfirst}	
+\usepackage{color}			
+\usepackage{graphicx}		
+\usepackage{microtype} 		
+% ---
+
+% ---
+% Pacotes adicionais,
+\usepackage{lipsum}	
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumerate} 
+\usepackage{listings}     
+
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+\include{comandos}
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\input{custom}
+% ---
+
+
+
+
+%%%%%%%%%=============== DOCUMENTO ===========%%%%%%%%%%%
+% ----
+% Início do documento
+% ----
+\begin{document}
+\selectlanguage{brazil}
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+
+
+% ---
+ \begin{fichacatalografica} 
+ \includepdf[pages={-}]{FichaCatalografica.pdf} 
+ \end{fichacatalografica}
+
+
+
+% ---
+ \includepdf{aprova}
+% ---
+
+\include{resumos}
+
+% ---
+% Dedicatória/Agradecimentos/Epígrafe
+\include{agrad_dec_ep}
+% ---
+\include{Modelo_Monografia_UFJ-BCC/agrad_dec_ep}
+
+
+
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ===================================================
+% ELEMENTOS TEXTUAIS - Capítulos ----
+% ----------------------------------------------------------
+\textual
+
+\chapter[Introdução]{Introdução}\label{cap:introducao}
+\addcontentsline{toc}{chapter}{INTRODUÇÃO}
+\input{capitulos/0Introd}
+
+\chapter{Referencial Teórico}\label{cap:referencial}
+\input{capitulos/1RefTeorico}
+
+\chapter{Trabalhos relacionados}\label{cap:relacionados}
+\input{capitulos/2TrabRelac}
+
+\chapter{Procedimentos de Pesquisa}\label{cap:implementacao}
+\input{capitulos/3ImpConst}
+
+\chapter{Conclusões e Trabalhos Futuros}\label{cap:conclusao}
+\input{capitulos/4ConcTrabFut}
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{bib}
+
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+\partanexos
+
+\chapter{Prompt de Exemplo}\label{anexo:prompt}
+
+\noindent A estrutura narrativa de um filme, normalmente, segue o seguinte padrão:
+
+\begin{itemize}
+    \item Exposição: Apresentação do mundo, personagens e situação inicial]
+    \item Incidente incitante: Evento que desencadeia a história principal
+    \item Desenvolvimento/Confrontação: Escalada do conflito e obstáculos
+    \item Clímax: Momento de maior tensão e decisão crucial
+    \item Resolução/Desfecho: Conclusão dos conflitos e nova situação
+\end{itemize}
+
+A trama envolve uma gama de personagens, sendo eles o protagonista, o antagonista e os personagens secundários. É comum que haja algum tipo de arco ou curva de personagem mostrando uma grande mudança no protagonista ou antagonista. Pode ser um arco de redenção, a jornada do herói, etc.
+
+A narrativa, por sua vez, é movida por um conflito, que pode envolver vários personagens ou ser um conflito interno/psicológico do personagem principal.
+
+É comum que haja algum tipo de tema central ou subtexto abordado, dando mais profundidade a história e aos personagens abordados.
+
+Outro elemento extremamente importante é a ambientação: tempo e espaço, onde e quando a história se passa.
+
+Sabe-se que atualmente as narrativas de jogos têm se tornado cada vez mais cinematográficas. Isso permite que, ao delimitar os elementos essenciais para uma narrativa de jogo, conceitos do cinema possam ser amplamente utilizados.
+
+Tendo tudo isso em mente:
+
+Você é um \textit{game designer} que cria roteiros/narrativas para jogos. Sua missão é criar uma narrativa para um jogo de terror, sobre vampiros, com um protagonista masculino de origem brasileira com ascendência sul coreana, chamado Shin. Lembre: o protagonista deve ter um perfil definido (nome, origem, histórico, motivação). Atenha-se às etapas 1 e 2 do padrão que o cinema utiliza. Lembre-se de fazer um planejamento, apresentando o personagem e sua história de background, como uma espécie de perfil, e depois escreva a história de uma fase inicial e introdutória do jogo, que, em um filme, seria como a cena de abertura + parte do primeiro ato. O tom deve ser <atmosfera>.
+
+Saída esperada (com títulos e seções):
+
+Perfil do Protagonista – apresentação detalhada.
+
+Exposição (Abertura do jogo) – cena inicial + contexto do mundo.
+
+Incidente Incitante – evento que inicia a jornada do jogador.
+
+(A narrativa deve ter abertura para decisões ou ações do jogador, ou seja, deve ser interativa, a menos que seja uma cut scene.)
+
+História base: Shin é um jovem religioso de 14 anos. Ele ama a igreja e quer começar a se preparar para ser padre. Um dia, devido a uma forte tempestade, ele fica preso dentro da igreja que frequentava e no porão de lá ele é atacado por uma criatura desconhecida. Três dias depois ele acorda com uma sede incontrolável e completamente confuso. Ele volta para a casa dos pais, que o estavam procurando pelo tempo que passou sumido. Ele fica cada vez mais debilitado com o passar dos dias, com aparência cadavérica, presas proeminentes, íris vermelhas e uma estranha urgência de (em itálico) rasgar a pele dos humanos.
+
+Escreva, em forma de roteiro, detalhando exatamente em quais partes o jogador deve tomar decisões e quais são todas as ações do personagem, a partir disso, detalhando com riqueza os acontecimentos e os destrinchando em ações e decisões que impactem a narrativa a serem tomadas.
+
+\chapter{Narrativa Gerada pelo \textit{Deepseek}}\label{anexo:narrativa}
+
+\noindent SANGUIS ET FIDES: Roteiro de Jogo - Fase Inicial
+
+Perfil do Protagonista
+
+Nome: Shin Kim
+Idade: 14 anos
+Origem: Curitiba, Paraná, Brasil. Mãe brasileira, pai sul-coreano.
+Aparência: Cabelos negros lisos, olhos castanhos amendoados, estatura mediana para a idade. Após o incidente, sua pele se tornará pálida e translúcida, seus olhos desenvolverão uma íris vermelha e suas presas caninas se tornarão proeminentes.
+
+Histórico e Personalidade:
+Shin é um jovem tranquilo, introspectivo e profundamente religioso. Cresceu entre duas culturas: a calorosidade e a fé católica da mãe brasileira e a disciplina e o respeito às tradições do pai coreano. A igreja sempre foi seu refúgio, um lugar de ordem e paz onde ele sentia que pertencia. Sua maior ambição é entrar para o seminário assim que completar 18 anos. Ele é observador, gentil e tem um forte senso de dever, mas carrega uma certa ingenuidade típica de quem passou a vida dentro de um ambiente protegido.
+
+Motivação Inicial: Servir a Deus, encontrar seu lugar no mundo e fazer seus pais orgulhosos.
+Motivação Pós-Incidente (Arco Previsto): Sobreviver, entender a maldição que o consome e, acima de tudo, lutar contra a besta que agora habita seu corpo, buscando uma cura ou uma forma de redimir sua alma perante a fé que sempre guiou sua vida. O conflito central será interno: sua devoção religiosa contra a sede vampírica incontrolável.
+
+Narrativa da Fase Inicial e Introdutória
+
+1. Exposição (Abertura do jogo)
+
+CENA 1 - Cut Scene (Não interativa)
+
+[CENA SE INICIA]
+
+AMBIENTAÇÃO: Noite de temporal em Curitiba. A câmera mostra uma vista exterior da Igreja de São Sebastião, uma construção antiga de pedra. A chuva cai torrencialmente, os raios iluminam o céu, e os ventos forte sacodem os galhos das árvores do cemitério anexo.
+
+INTERIOR DA IGREJA - NOITE
+
+A câmera adentra a igreja, vazia. A iluminação é fraca, vinda de velas tremulantes nos altares. O som da chuva batendo nos vitrais coloridos é alto e ameaçador. SHIN, de 14 anos, veste uma calça jeans e um casaco sobre a camisa social. Ele está ajoelhado no primeiro banco, diante do altar-mor, rezando em voz baixa. Seu rosto é sereno, iluminado pelas chamas das velas.
+
+PADRE EMÍLIO (V.O., com voz cansada e gentil): "Shin, meu filho. Já está muito tarde. E essa tempestade não vai dar trégua."
+
+Shin se vira. O PADRE EMÍLIO (60 anos), um homem bondoso que é seu mentor, se aproxima.
+
+SHIN: "Só terminei de arrumar os missais, Padre. E queria pedir forças para a conversa com meus pais... sobre o seminário."
+
+PADRE EMÍLIO: (Sorrindo) "Eles te amam, Shin. Vão entender. Agora vá para casa. Vou fechar a igreja."
+
+Shin se levanta, pega sua mochila e se dirige para a porta principal. Ele a empurra, mas um forte vendaval a empurra de volta, fechando-a com força.
+
+PADRE EMÍLIO: "Pelos céus... Nunca vi algo assim. O portão do cemitério deve ter arrombado. Vou ver a saída lateral. A energia caiu, o gerador vai acionar no porão. Fique aqui."
+
+O padre pega um velho candelabro com várias velas e se dirige para uma porta de madeira pesada, ao lado do altar, que leva ao subsolo. A câmera foca em Shin, sozinho na nave da igreja. O silêncio é quebrado apenas pelo uivar do vento e por um **SOM BAIXO E METÁLICO**, como se algo tivesse se soltado no porão.
+
+SHIN: (Para si mesmo) "Padre Emílio?"
+
+Não há resposta. Um barulho de queda abafada vem do porão. As velas da igreja tremulam violentamente.
+
+[FIM DA CUT SCENE]
+
+
+MODO JOGO: Controle do jogador é liberado.
+
+
+AÇÃO DO JOGADOR:
+Shin está no centro da nave da igreja. O jogador pode controlá-lo.
+
+Objetivo: Investigar o silêncio do Padre Emílio.
+Ambiente Interativo:
+O jogador pode andar pela igreja.
+As velas projetam sombras dinâmicas e assustadoras.
+O som da tempestade é constante.
+A porta do porão está entreaberta, com uma luz fraca e trêmula (do gerador) vindo de dentro.
+
+DECISÃO 1: O que Shin deve fazer?
+
+Opção A (Fé/Coragem): "Preciso ver se o Padre está bem." (Dirigir-se diretamente à porta do porão).
+Opção B (Cautela/Medo): "Algo não está certo. Melhor procurar algo para me defender." (Procurar um objeto na igreja antes de descer. Ex: um crucifixo grande de prata perto do batistério, ou um dos castiçais de metal do altar).
+
+CONSEQUÊNCIA DA DECISÃO:
+Escolher a Opção B adiciona um momento de tensão e permite que Shin pegue um item (ex: Castiçal de Metal), que pode ser usado em um evento de *Quick Time Event* (QTE) mais tarde, dando uma pequena vantagem. A narrativa principal, no entanto, prossegue de forma similar.
+
+
+2. Incidente Incitante
+
+SEQUÊNCIA INTERATIVA: O Porão
+
+Independente da escolha, Shin desce as escadas de pedra estreitas que levam ao porão.
+
+AMBIENTAÇÃO: O porão é úmido, abafado e cheira a mofo e óleo. O gerador a diesel ronca em um canto, iluminando o ambiente de forma irregular. Estantes com documentos antigos da paróquia e barris vazios se alinham nas paredes. No centro do cômodo, o candelabro do Padre Emílio está caído no chão, as velas apagadas. O padre não está visível.
+
+DIÁLOGO INTERNO (Voz do Shin, sussurrada, acionada ao se aproximar do candelabro):** "Onde ele está? Deus, me dê coragem..."
+
+AÇÃO DO JOGADOR:
+Shin deve investigar o porão.
+
+Interagir com o Candelabro Caído: "As velas se apagaram como se um vento forte tivesse passado... mas aqui não há vento."*
+Interagir com uma estante tombada: "Parece que alguém... ou algo... empurrou isso com violência."
+Ouvir um som: Um arrastar fraco e um gemido abafado vêm de um canto escuro, atrás de uma pilha de barris.
+
+Shin se aproxima cautelosamente. Ao virar o último barril, ele encontra o Padre Emílio, pálido e ensanguentado, escondido.
+
+PADRE EMÍLIO (Ofegante, com voz fraca e aterrorizada): "Fuja, Shin! Não é um ladrão... É uma criatura... da escuridão pura! Ela está aqui!"
+
+Antes que Shin possa reagir, as luzes do gerador **piscam e se apagam**, mergulhando o porão na escuridão quase total. Por um instante, o gerador falha. Quando a luz volta, titubeante, uma figura alta e pálida, de movimentos fluidos e antinaturais, está parada a alguns metros de distância.
+
+A CRIATURA: Sua pele é branca como a porcelana, seus olhos são completamente negros e um sorriso largo e cheio de dentes afiados se estende em seu rosto. Suas roupas são escuras e esvoaçantes.
+
+QTE (Quick Time Event): A Investida
+A criatura se move num borrão de velocidade em direção a Shin.
+
+Se o jogador escolheu a Opção B (Castiçal): Um prompt na tela ordena **[BOTÃO X]**. Ao acertar, Shin levanta o castiçal instintivamente. A criatura desvia com um silvo de desdém, mas a investida é interrompida. Ela então ataca com uma força sobre-humana, arremessando Shin contra a parede.
+Se o jogador escolheu a Opção A (Sem item): Um prompt desafiador de [BOTÃO X] aparece. Se falhar, ou se não tiver o item, a criatura atinge Shin diretamente, arremessando-o contra a parede.
+
+CUT SCENE (Não interativa)
+
+Shin cai no chão, atordoado. A criatura se aproxima, ignorando completamente o Padre Emílio, que grita em desespero. Ela se inclina sobre Shin, que tenta se esquivar inutilmente.
+
+CRIATURA (Com voz sibilante e sedosa): "Um filho da fé... tão jovem... tão puro. Um vaso perfeito."
+
+A criatura segura Shin com uma força irreprimível. Ele sente uma dor aguda e gelada no pescoço. Sua visão escurece. A última coisa que ele vê é o rosto aterrorizado do Padre Emílio antes de perder a consciência.
+
+[TELA FICA PRETA]
+
+SONS: Chuva, um grito abafado do padre, e depois... silêncio.
+
+[FADE IN]
+
+CENA 3 - O Despertar
+
+AMBIENTAÇÃO: A câmera está desfocada. Shin acorda deitado no banco de madeira da própria igreja. A luz do amanhecer entra suavemente pelos vitrais. A tempestade passou. Ele está sozinho.
+
+AÇÃO DO JOGADOR:
+Shin se levanta, sentindo-se extremamente confuso e fraco.
+
+Objetivo: Voltar para casa.
+Sensações (Feedback de Áudio e Visual):
+A câmera está levemente instável, simulando desorientação.
+Sons normais são distorcidos e amplificados: o arrastar de seus pés no chão soa como um trovão, o canto de um pássaro lá fora é agudo e doloroso.
+Visão: As cores estão dessaturadas, mas o mundo parece incrivelmente nítido. Shin vê poeira flutuando no ar com detalhes nunca percebidos antes.
+Sede: Uma *"Barra de Sede"* aparece discretamente na HUD, já no vermelho. É uma sensação avassaladora de secura, como se sua garganta estivesse fechada.
+
+Shin caminha com dificuldade até sua casa, que fica a poucas quadras da igreja. O caminho é uma provação. Ele vê pessoas na rua, e um novo elemento surge:
+
+IMPULSO (Feedback Visual): Quando Shin olha para a nuca de um transeunte, uma dica visual sutil (como um contorno vermelho pulsante) aparece em volta da pessoa, acompanhada de um sussurro na mente de Shin: *"Rasgar... sugar... aliviar a sede..."*
+
+DECISÃO 2: O primeiro contato.
+
+Shin chega em casa. Sua MÃE está na sala, com o rosto marcado pela preocupação.
+
+MÃE: "SHIN! Meu Deus, onde você esteve? Sumido por três dias! Seu pai está pela cidade toda te procurando!"
+
+Shin tenta responder, mas a visão da veia pulsando no pescoço de sua mãe domina sua atenção. A *Barra de Sede* pisca.
+
+Opção A (Controle): "Mãe, eu... não me sinto bem." (Shin desvia o olhar, focando no chão. Ele luta contra o impulso).
+Opção B (Fuga): (Sem diálogo) Shin ignora a mãe e corre em direção ao seu quarto, trancando a porta.
+
+CONSEQUÊNCIA:
+Ambas as opções levam ao mesmo resultado narrativo: Shin se tranca no quarto, aterrorizado com o que está sentindo. A **Opção A** mostra sua luta interna de forma mais dramática.
+
+CUT SCENE FINAL DA INTRODUÇÃO
+
+Shin se olha no espelho do quarto. Sua aparência está cadavérica, pálida. Suas íris agora são de um vermelho sangue. Ele levanta o lábio superior e vê duas presas afiadas e proeminentes onde antes estavam seus caninos. Ele abre a boca para gritar, mas só sai um sussurro rouco de terror. A câmera se aproxima do seu rosto refletido, seus olhos vermelhos cheios de pavor e confusão.
+
+TELA PRETA.
+
+TÍTULO DO JOGO: SANGUIS ET FIDES
+
+A fase inicial termina aqui, com o Incidente Incitante (o ataque no porão) concluído e a jornada de horror pessoal de Shin oficialmente iniciada. O jogador entende o conflito: controlar um personagem que precisa lutar contra sua própria natureza bestial para salvar sua alma.
+
+
+
+
+\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%\phantompart
+\printindex
+%---------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,219 @@
+\noindent Este capítulo descreve o processo de concepção, construção e validação das narrativas geradas. Primeiramente, serão definidas as características da narrativa e a forma como os \textit{prompts} serão elaborados com base nesses atributos. Em seguida, serão expostos os exemplos desenvolvidos, detalhando os \textit{prompts} utilizados e as ferramentas empregadas em sua criação. Por fim, serão apresentados os resultados obtidos, incluindo a análise do material gerado, os critérios de aproveitamento e o processo de validação realizado.
+
+\section{Critérios de Narrativa}
+\label{criterios-narrativa}
+\noindent Conforme mencionado anteriormente, as narrativas de jogo têm apresentado a tendência de se tornarem cada vez mais cinematográficas. Por esse motivo, também foram investigadas referências nos estudos de cinema, a fim de definir as características essenciais de uma narrativa.
+
+\citeonline{progressao} definem três recursos fundamentais para a escrita, sendo eles: espaço, tempo e ação. A partir da definição desses três elementos, o autor escolhe um modelo de roteiro, e então são acrescentados outros elementos importantes, como gênero, criação e caracterização de personagens. Segundo \citeonline{manualroteiro}, "o roteiro é uma história contada em imagens, diálogos e descrições, localizada no contexto da estrutura dramática". O paradigma básico de um roteiro, ou seja, o esquema conceitual do roteiro utilizado neste trabalho é o paradigma descrito na figura \ref{paradigma}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Paradigma de um roteiro}
+    \includegraphics[width=0.70\linewidth]{imagens/paradigma_roteiro.png}
+    \caption*{Fonte: \cite{manualroteiro}}
+    \label{paradigma}
+\end{figure}
+
+Ainda de acordo com \citeonline{manualroteiro}, os três atos se decompõem, de maneira sucinta, da seguinte forma:
+
+\begin{itemize}
+    \item \textbf{Ato I (Apresentação)}: momento em que se apresentam o protagonista, o mundo em que vive, os personagens secundários e a premissa, o tema central da história. O espectador (ou, no caso deste trabalho, o jogador) deve entender rapidamente “quem é quem” e o que está acontecendo no momento em que a narrativa se encontra. O Ato I termina com o primeiro ponto de virada, um acontecimento que muda o rumo da narrativa e conduz à ação principal.
+    \item \textbf{Ato II (Confrontação)}: é o núcleo da história, onde o personagem principal enfrenta uma série de obstáculos e conflitos que o afastam de seu objetivo, revelando sua força e fraquezas. Aqui ocorre o desenvolvimento das relações, tensões e dilemas centrais. O ato se encerra com o segundo ponto de virada, um evento que redireciona a trama para a resolução.
+    \item \textbf{Ato III (Resolução)}: diz respeito à solução do conflito e o desfecho da história. O protagonista atinge (ou não) sua meta, e as consequências de suas escolhas são reveladas. “Resolução” não significa apenas o fim, mas a resposta dramática ao que foi proposto no início. É o momento de amarrar as linhas narrativas e deixar uma impressão final no público.
+\end{itemize}
+
+\citeonline{Lindley2005StoryAN} também define os mesmos três atos em um trabalho sobre jogos, o que evidencia como os campos se entrelaçam. Assim, desenha-se o primeiro e mais essencial critério de narrativa: ela deve conter início, meio e fim, seguindo o fluxo "modelo-confronto-resolução", descrito por \citeonline{manualroteiro}.
+
+Na construção de uma narrativa para um jogo eletrônico, deve-se levar em conta as seguintes questões: qual o objetivo do jogo? O que o jogador
+terá de fazer? Como ele vai fazer? O que tornará o jogo divertido? Quem será o inimigo? Como criar um personagem principal de forma que atraia o público? \cite{beatriz2019narrativa}. Essas questões são importantes de serem feitas, já que, diferente de uma narrativa cinematográfica, uma narrativa de jogo precisa dar abertura para interatividade. Por isso, neste trabalho, serão utilizados conceitos tanto dos jogos quanto do cinema.
+
+Os elementos essenciais de uma narrativa, segundo \citeonline{Lindley2005StoryAN}, são:
+
+\begin{itemize}
+    \item \textbf{História, enredo e discurso} (três níveis de estrutura narrativa);
+    \item \textbf{Protagonista, conflito e resolução} (núcleo da ação dramática);
+    \item \textbf{Três atos principais} (apresentação, confronto e desfecho);
+    \item \textbf{Temporalidade e causalidade}, que conectam os eventos e dão coerência ao enredo.
+\end{itemize}
+\section{Construção do \textit{Prompt}}
+\label{prompt}
+\noindent A partir dos elementos definidos na seção anterior, foi possível criar os \textit{prompts} (conjuntos de instruções) que serviram de entrada para os modelos de IA que foram testados. Os \textit{prompts} foram criados combinando os requisitos de uma narrativa com engenharia de \textit{prompt}. A engenharia de \textit{prompt} é o processo de projetar, refinar e otimizar \textit{prompts} de entrada para comunicar efetivamente a intenção do usuário a uma Inteligência Artificial \cite{Ekin_2023}.
+
+Segundo \citeonline{gao2023prompt}, o \textit{roleprompting} é uma maneira simples de incentivar a geração de textos em um estilo criativo específico, como o de um autor. Essa técnica, chamada em português de personificação, consiste em atribuir um papel ao modelo antes de solicitar uma tarefa. Ela é capaz de aumentar o foco e a precisão da saída da IA, além de reduzir ambiguidades no comando. Sendo assim, essa foi a técnica escolhida para a construção do \textit{prompt}. 
+
+Para ilustrar a aplicação prática da técnica de personificação, bem como aplicar os conceitos referentes a narrativas, apresenta-se o \textit{prompt} inicial desenvolvido para este trabalho:
+
+\textit{''A estrutura narrativa de um filme, normalmente, segue o seguinte padrão:}
+
+
+\textit{\textbf{1 - Exposição}: Apresentação do mundo, personagens e situação inicial;}
+
+\textit{\textbf{2 - Incidente incitant}e: Evento que desencadeia a história principal;
+}
+
+\textit{\textbf{3 - Desenvolvimento/Confrontação}: Escalada do conflito e obstáculos;}
+
+\textit{\textbf{4 - Clímax}: Momento de maior tensão e decisão crucial;}
+
+\textit{\textbf{5 - Resolução/Desfecho}: Conclusão dos conflitos e nova situação;}
+
+
+\textit{A trama envolve uma gama de personagens, sendo eles o protagonista, o antagonista e os personagens secundários. É comum que haja algum tipo de arco ou curva de personagem mostrando uma grande mudança no protagonista ou antagonista. Pode ser um arco de redenção, a jornada do herói, etc.
+A narrativa, por sua vez, é movida por um conflito, que pode envolver vários personagens ou ser um conflito interno/psicológico do personagem principal.
+É comum que haja algum tipo de tema central ou subtexto abordado, dando mais profundidade a história e aos personagens abordados.
+Outro elemento extremamente importante é a ambientação: tempo e espaço, onde e quando a história se passa. }
+
+\textit{Sabe-se que atualmente as narrativas de jogos têm se tornado cada vez mais cinematográficas. Isso permite que, ao delimitar os elementos essenciais para uma narrativa de jogo, conceitos do cinema possam ser amplamente utilizados.
+}
+\textit{Tendo tudo isso em mente: }
+
+\textit{Você é um game designer que cria roteiros/narrativas para jogos. Sua missão é criar uma narrativa para um jogo de <gênero>, sobre <assunto>, com um protagonista <fem/masc> de origem <etnia>, chamado <nome>. Lembre: o protagonista deve ter um perfil definido (nome, origem, histórico, motivação). Atenha-se às etapas 1 e 2 do padrão que o cinema utiliza. Lembre-se de fazer um planejamento, apresentando o personagem e sua história de background, como uma espécie de perfil, e depois escreva a história de uma fase inicial e introdutória do jogo, que, em um filme, seria como a cena de abertura + parte do primeiro ato. O tom deve ser <atmosfera>. }
+
+\textit{História base:}
+
+\textit{<história>''}
+
+
+O \textit{prompt} apresentado configura-se como um modelo base, ou \textit{template}, destinado à geração de narrativas em ambiente de Inteligência Artificial generativa. Sua estrutura foi concebida de modo a padronizar as instruções dadas ao modelo, garantindo consistência nas respostas e possibilitando a análise comparativa entre as saídas geradas. Esse \textit{prompt} foi empregado na etapa de testes, na qual foram avaliados aspectos como coerência narrativa, fidelidade aos critérios definidos na seção \ref{criterios-narrativa} e o potencial criativo das narrativas resultantes.
+
+A composição do modelo segue uma estrutura simples, mas eficaz. Em um primeiro momento, apresenta-se um conjunto de conceitos fundamentais sobre narrativa, extraídos de referenciais teóricos do cinema e dos jogos, que funcionam como uma espécie de treinamento para a Inteligência Artificial. Essa introdução fornece ao modelo um repertório básico sobre a forma narrativa, permitindo que ele reconheça elementos estruturais essenciais, como exposição, conflito, clímax e desfecho.
+
+Na sequência, o \textit{prompt} orienta o modelo por meio de um roteiro que organiza o processo criativo, especificando parâmetros como gênero, tema, perfil do protagonista, atmosfera e recorte narrativo desejado. Somente após essa contextualização teórica e estrutural são introduzidos os elementos variáveis, isto é, as informações específicas de cada teste narrativo, o que garante que a geração textual mantenha coerência e aderência aos princípios previamente definidos.
+
+Entretanto, é importante destacar que a formulação do \textit{prompt} pressupõe que a pessoa responsável pela inserção dos dados possua um conhecimento mínimo sobre os conceitos narrativos, assim como sobre o funcionamento da IA. Essa familiaridade teórica é o que permite compreender a função de cada etapa do \textit{prompt} e, se necessário, adaptar suas definições de acordo com o objetivo narrativo desejado. Usuários sem esse repertório tendem a reproduzir o modelo de forma mecânica, sem explorar plenamente seu potencial interpretativo e criativo.
+
+Dessa forma, essa condição (ter conhecimento prévio) é importante para que o \textit{prompt} funcione não apenas como uma ferramenta técnica de geração textual, mas também como um instrumento metodológico de experimentação e análise das capacidades narrativas da IA.
+
+ 
+
+\section{Geração da Narrativa}
+\label{geracao}
+
+\noindent Com o \textit{prompt} definido na seção anterior, procedeu-se à geração das narrativas utilizando alguns LLMs (\textit{Large Language Model} - modelo de linguagem de grande escala), sendo eles \textit{ChatGPT} na versão GPT-5, \textit{Deepseek V3} e \textit{Gemini 2.5 Flash}. Essa etapa teve como objetivo avaliar a capacidade dos modelos de IA em compreender as instruções fornecidas e produzir textos narrativos coerentes, estruturados e alinhados aos critérios estabelecidos na figura ~\ref{criterios}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Parte 1 da Tabela de Comparação dos LLMs}
+    \includegraphics[width=0.95\linewidth]{imagens/criterios1.jpg}
+    \caption*{}
+    \label{criterios1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Parte 1 da Tabela de Comparação dos LLMs}
+    \includegraphics[width=0.95\linewidth]{imagens/criterios2.jpg}
+    \caption*{}
+    \label{criterios2}
+\end{figure}
+
+Os elementos apresentados nas figuras \ref{criterios1} e \ref{criterios2} representam, por meio de uma tabela, aspectos fundamentais da construção narrativa clássica, de acordo com a literatura, e foram adotados como critérios para análise da qualidade das saídas produzidas pelos modelos de IA. Esses elementos funcionam como um \textit{checklist}, de modo que uma saída ideal deve contemplar todos eles. 
+
+Cada um dos elementos tem sua importância. A \textbf{exposição}, por exemplo, estabelece a base emocional e situacional da trama, permitindo que o leitor compreenda as motivações e o cenário antes do conflito principal, ao passo que o \textbf{incidente incitante} funciona como gatilho dramático, despertando o interesse e definindo o objetivo do protagonista. O \textbf{desenvolvimento} trata-se do eixo dramático que mantém a tensão e promove a progressão da história, enquanto o \textbf{clímax} representa o ponto de maior tensão e conflito, onde ocorre a decisão mais importante ou o enfrentamento final do protagonista e do antagonista (seja este físico ou metafísico). Por fim, a \textbf{resolução} é o encerramento da narrativa, onde os conflitos são solucionados e o equilíbrio é restaurado.
+
+Dessa forma, os testes foram realizados ao longo de três semanas, entre agosto e setembro de 2025, utilizando os LLMs mencionados anteriormente: \textit{ChatGPT} (versão GPT-5), \textit{Deepseek V3} e \textit{Gemini 2.5 Flash}. O objetivo principal foi avaliar a capacidade de cada modelo em compreender o \textit{prompt} desenvolvido e gerar narrativas coerentes, priorizando os dois primeiros momentos da estrutura narrativa (a exposição e o incidente incitante) conforme definido nos critérios de análise.
+
+Para garantir a imparcialidade dos resultados, foi criada uma conta de usuário nova para cada modelo testado, de modo a evitar qualquer interferência de histórico de conversas, preferências prévias ou dados contextuais que pudessem influenciar a produção textual. Em todos os casos, o mesmo \textit{prompt} foi inserido integralmente, sem modificações de conteúdo, para assegurar as mesmas condições em cada IA.
+
+Em cada sessão, a interação com a IA foi limitada a uma única solicitação de geração narrativa, sem refinamentos ou correções adicionais no mesmo diálogo. Dessa forma, foi possível avaliar o desempenho de cada modelo a partir da primeira resposta fornecida, o que contribui para a objetividade da comparação entre as saídas. Eventuais ajustes no \textit{prompt} foram realizados apenas após o término de cada rodada de testes, sempre visando aprimorar a clareza das instruções, e não o conteúdo narrativo em si.
+
+As narrativas produzidas por cada modelo foram analisadas com base nos critérios definidos anteriormente. As tabelas apresentadas nas figuras \ref{criterios-preenchida1} e \ref{criterios-preenchida2} exemplifica a comparação de uma das semanas e permite visualizar o desempenho relativo de cada IA nos diferentes aspectos avaliados.
+
+\begin{figure}[H]
+    \centering
+    \caption{Critérios atendidos das narrativas geradas pelas IAs}
+    \includegraphics[width=0.95\linewidth]{imagens/criteriospreenchida1.jpg}
+    \caption*{}
+    \label{criterios-preenchida1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Critérios atendidos das narrativas geradas pelas IAs}
+    \includegraphics[width=0.95\linewidth]{imagens/criteriospreenchida2.jpg}
+    \caption*{}
+    \label{criterios-preenchida2}
+\end{figure}
+
+Dentre os modelos testados, o \textit{Deepseek V3} apresentou o melhor desempenho geral. Suas saídas demonstraram uma ambientação mais rica, excelente contextualização da situação inicial e um domínio expressivo da atmosfera do gênero escolhido, oferecendo uma experiência narrativa mais coesa e envolvente. Ainda que a escolha da melhor narrativa envolva certa dimensão interpretativa, o processo de análise foi conduzido de maneira sistemática e comparativa, reduzindo a influência de preferências pessoais e assegurando maior imparcialidade nos resultados.
+
+Vale ressaltar que é altamente recomendado ter uma ideia pré-existente para replicar este trabalho, pois, levando em conta que a IA opera recombinando e ressignificando ideias existentes em seu treinamento, existe a possibilidade de acontecer um plágio, ainda que não intencional, do trabalho de outrem. Para mitigar esse risco e assegurar a originalidade do trabalho, é fundamental que o usuário forneça um \textit{prompt} detalhado e estruturado a partir de uma ideia narrativa própria e bem definida.
+
+\section{Validação com Rede de Petri}
+\label{validacao}
+
+\noindent Com a narrativa gerada em mãos, foi possível criar um modelo de rede de Petri capaz de representar graficamente a narrativa e validar o fluxo de ações descritas por ela. O método utilizado para a modelagem nesse trabalho é o proposto por \citeonline{barreto2015modelagem}. Nessa abordagem, os autores representam o jogo por meio de uma rede de Petri que modela uma processo de negócio. Há então um único lugar de início e um de fim; os estados do jogo são representados pelos lugares da redes; as ações/atividades são representadas pelas transições; já o \textit{token} representa o jogador.
+
+A narrativa gerada foi submetida a um processo de decomposição estrutural, no qual as situações descritas foram convertidas em lugares e os eventos ou ações responsáveis por alterações de estado foram representados como transições. Essa correspondência permitiu traduzir a progressão narrativa para um modelo em rede de Petri, evidenciando as relações de causalidade e a coerência entre as etapas da história. O resultado é uma representação formal capaz de demonstrar, o encadeamento lógico presente na narrativa. \citeonline{barreto2015modelagem} ainda cita que o modelo pode ser criado utilizando o software de edição e simulação \textit{CPN Tools} e que pode ser analisado a partir de um método que deriva da verificação da propriedade \textit{soundness}.
+
+As figuras \ref{rede1}, \ref{rede2} e \ref{rede3} apresentam a rede de Petri elaborada a partir da narrativa correspondente gerada pela Inteligência Artificial (Anexo \ref{anexo:narrativa}) a partir do \textit{prompt} (Anexo \ref{anexo:prompt}), representando graficamente a progressão dos eventos e a lógica causal que estrutura o enredo. Esse tipo de modelagem permite compreender a narrativa não apenas em termos de sequência linear, mas como um sistema dinâmico de estados e transições, no qual as ações e reações dos personagens determinam o fluxo da história. Os lugares foram nomeados de P1 a P19. Cada um deles corresponde a uma situação ou estado narrativo, enquanto que as transições interligam essas etapas, indicando a passagem de um estado a outro mediante a ocorrência de um evento ou decisão.
+
+\begin{figure}[H]
+    \centering
+    \caption{Parte 1 da rede de Petri correspondente a narrativa gerada}
+    \includegraphics[width=0.95\linewidth]{imagens/pfc v1 parte 1.png}
+    \caption*{}
+    \label{rede1}
+\end{figure}
+
+A primeira parte da rede, que é ilustrada pela figura \ref{rede1}, compreende os lugares de P1 a P6 e descreve os eventos iniciais que situam o jogador dentro da narrativa. O jogo se inicia com a percepção de que o padre desapareceu (P2), evento que desperta a curiosidade e estabelece o ponto de partida da trama. A partir daí, o jogador inicia a busca por respostas. Neste ponto ele tem a opção de buscar proteção ou investigar, descendo ao porão e examinando o ambiente, o que amplia a sensação de tensão e reforça a atmosfera de mistério. 
+
+A ação de procurar o padre leva à transição para o primeiro momento de ameaça, culminando no aviso de perigo, que simboliza a quebra da normalidade e o ingresso definitivo na zona de conflito. Essa primeira sequência, portanto, estabelece a base dramática e os primeiros elos de causa e efeito que impulsionarão o restante da narrativa, além de apresentar o primeiro contato do jogador com o elemento sobrenatural.
+
+\begin{figure}[H]
+    \centering
+    \caption{Parte 2 da rede de Petri correspondente a narrativa gerada}
+    \includegraphics[width=0.95\linewidth]{imagens/pfc v1 parte 2.png}
+    \caption*{}
+    \label{rede2}
+\end{figure}
+
+A segunda parte da rede pode ser vista na figura \ref{rede2}, que abrange os lugares de P7 a P13, correspondendo ao desenvolvimento e à escalada do conflito. Aqui, o foco se desloca da investigação para a sobrevivência e o impacto psicológico das experiências vividas. O ataque (P8) e a consequente perda de consciência (P9) funcionam como clímax dessa primeira fase, levando a um salto temporal que se manifesta quando o personagem desperta após três dias (P10).
+
+A partir desse ponto, o jogador experimenta uma sensação de desorientação (P11), voltando para casa (P12) e começando a perceber alterações cognitivas e comportamentais (P13). Esses estados indicam a deterioração da estabilidade emocional e marcam a transição do horror físico para o horror psicológico. O fluxo da rede de Petri nesta parte demonstra a sobreposição entre as ações externas e o estado interno do protagonista, reforçando o caráter simbólico da experiência.
+
+\begin{figure}[H]
+    \centering
+    \caption{Parte 3 da rede de Petri correspondente a narrativa gerada}
+    \includegraphics[width=0.95\linewidth]{imagens/pfc v1 parte 3.png}
+    \caption*{}
+    \label{rede3}
+\end{figure}
+
+Por fim, a terceira e última parte da rede de Petri (figura \ref{rede3}) compreende os lugares de P14 a P19 e representa o desfecho da narrativa. Aqui, o protagonista retorna ao convívio familiar, encontrando a mãe (P14). Neste ponto ele tem duas alternativas: tentar estabelecer algum senso de normalidade conversando com a mãe (P15) e controlando seus instintos, ou ele pode fugir para o quarto (P16) e não fazer nada. Entretanto, a progressão dos eventos revela que o personagem está cada vez mais dominado pelos efeitos de suas vivências anteriores.
+
+As ações subsequentes evidenciam o isolamento e o colapso psicológico. A última ação, olhar no espelho, atua como símbolo de reconhecimento e confronto interno, encerrando o ciclo narrativo de forma ambígua e perturbadora. Assim, essa parte final da rede representa o fechamento da jornada, sem necessariamente restaurar o equilíbrio. O modelo reforça a ideia de que, em narrativas de horror psicológico, o conflito central não é completamente resolvido, mas transformado em um estado permanente de incerteza.
+
+A rede de Petri apresentada foi elaborada com o objetivo de representar, de forma visual, a estrutura narrativa correspondente aos dois primeiros momentos da história: a exposição e o incidente incitante. Esses elementos iniciais são fundamentais para o estabelecimento da coerência narrativa e servem como base para a validação dos critérios apresentados na figura \ref{criterios}.
+
+Ao modelar a narrativa em uma rede de Petri, é possível identificar com clareza como cada ação ou evento contribui para a construção da ambientação, para a introdução dos personagens e para o surgimento do evento que desencadeia a trama principal. Nesse sentido, a rede não apenas descreve o fluxo narrativo, mas também evidencia a lógica causal entre as ações, permitindo verificar se a sequência dos acontecimentos respeita a progressão esperada para este estágio da narrativa.
+
+Nos primeiros lugares (P1–P6), a rede contempla a fase da exposição, em que são apresentados o cenário, o protagonista e as motivações iniciais que situam o jogador dentro do universo narrativo. Cada transição representa uma ação introdutória que contribui para a construção da ambientação e para o reconhecimento da situação inicial. Esses elementos correspondem diretamente aos critérios de exposição, ambientação e apresentação do protagonista indicados na tabela de avaliação.
+
+A segunda parte (P7–P13) representa o momento do incidente incitante, isto é, o ponto de ruptura que transforma o estado inicial e impulsiona a narrativa. As transições desta etapa marcam o início do conflito central e indicam uma mudança significativa no estado do personagem. Essa mudança valida a presença de um conflito inicial, bem como a coerência entre as ações e a motivação do protagonista.
+
+Por fim, a última sequência (P14–P19) mantém o foco nas consequências diretas do incidente incitante, reforçando o tom psicológico e a atmosfera de horror propostos no gênero. As ações de fuga, isolamento e confronto interno demonstram que, mesmo sem alcançar o desenvolvimento ou a resolução do enredo, a narrativa estabelece uma base de tensão e imersão, essenciais para a continuidade da história.
+
+Assim, a rede de Petri funciona como uma ferramenta de verificação da estrutura narrativa, permitindo observar de forma objetiva como os elementos da exposição e do incidente incitante se articulam. Ao relacionar esse modelo com os critérios apresentados na tabela \ref{criterios}, é possível confirmar que a narrativa gerada pela IA segue uma progressão lógica e consistente, respeitando as etapas iniciais do paradigma cinematográfico adotado como referência teórica neste trabalho.
+
+\begin{figure}[H]
+    \centering
+    \caption{Limitabilidade}
+    \includegraphics[width=0.95\linewidth]{imagens/boundness.png}
+    \caption*{}
+    \label{limitabilidade}
+\end{figure}
+
+De acordo com \citeonline{barreto2015modelagem}, após a criação do modelo em rede de Petri do jogo, é possível analisá-lo por meio de propriedades bem conhecidas das redes de Petri. Os autores utilizam a análise automática da funcionalidade análise do \textit{state space}, gerada automaticamente pelo \textit{CPN Tools}. Essa funcionalidade verifica automaticamente se a rede submetida possui propriedades estruturais como a limitabilidade e vivacidade. \citeonline{barreto2015modelagem} aponta que essas duas propriedades são suficientes para garantir se o modelo analisado está correto, em termos de execução das atividades do jogo. A figura \ref{limitabilidade} ilustra uma parte do relatório gerado pelo \textit{state space} após a análise do modelo da narrativa. É possível notar que todos os lugares da rede nunca possuem mais de um \textit{token} ao mesmo tempo. Isso indica que o modelo é seguro, pois garante que não ocorre acúmulo indevido ou geração descontrolada de \textit{tokens}, preservando a coerência do fluxo e evitando erros estruturais que poderiam comprometer a lógica representada. Um modelo limitado demonstra que cada etapa do processo é executada de forma controlada e que o sistema não cria estados inconsistentes.
+
+\begin{figure}[H]
+    \centering
+    \caption{Vivacidade}
+    \includegraphics[width=0.95\linewidth]{imagens/liveness.png}
+    \caption*{}
+    \label{vivacidade}
+\end{figure}
+
+Já a figura \ref{vivacidade} ilustra a segunda parte do relatório que aponta a respeito da propriedade de vivacidade. O relatório aponta que não existem marcações mortas, tampouco transições mortas. Em outras palavras, o sistema nunca chega a uma situação em que nenhuma transição pode ser executada, o que significaria um \textit{deadlock}. Além disso, não há transições que nunca se tornam habilitadas ao longo da evolução do sistema. Todas as transições são vivas, o que significa que elas participam de alguma trajetória possível dentro do espaço de estados. Essa propriedade confirma que não existem caminhos inatingíveis e que todas as partes da rede desempenham um papel funcional dentro da dinâmica representada.
+
+Como \citeonline{barreto2015modelagem} destaca, a combinação entre limitabilidade e vivacidade é fundamental para garantir que o modelo represente um fluxo narrativo correto e consistente. No presente trabalho, essas propriedades indicam que, do ponto de vista lógico, a narrativa modelada se desenvolve sem interrupções inesperadas e sem comportamentos anômalos que poderiam comprometer a interpretação da história como um processo dinâmico. 
